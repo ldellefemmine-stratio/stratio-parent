@@ -47,6 +47,10 @@
 
     <scm>
         <url>https://github.com/Stratio/</url>
+        <connection>scm:git:git@github.com:Stratio/stratio-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:Stratio/stratio-parent.git
+        </developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
     <build>        
