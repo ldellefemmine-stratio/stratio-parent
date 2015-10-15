@@ -1,4 +1,20 @@
+<!--
 
+    Copyright (C) 2014 Stratio (http://stratio.com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -37,6 +53,13 @@
         </developer>
     </developers>
 
+    <organization>
+        <name>Stratio</name>
+        <url>http://stratio.com</url>
+    </organization>
+
+    <inceptionYear>2015</inceptionYear>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -53,6 +76,11 @@
         <tag>HEAD</tag>
     </scm>
 
+    <issueManagement>
+        <system>Jira</system>
+        <url>https://stratio.atlassian.net</url>
+    </issueManagement>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -60,6 +88,9 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.7.5.201505241946</version>
+                    <configuration>
+                        <dataFile>${jacoco.dataFile}</dataFile>
+                    </configuration>
                     <executions>
                         <execution>
                             <id>unit-test-coverage</id>
@@ -67,6 +98,7 @@
                                 <goal>prepare-agent</goal>
                             </goals>
                             <configuration>
+                                <skip>${skipUTs}</skip>
                                 <destFile>${basedir}/target/jacocoUT.exec</destFile>
                                 <propertyName>jacoco-UT-argline</propertyName>
                             </configuration>
@@ -77,6 +109,7 @@
                                 <goal>prepare-agent</goal>
                             </goals>
                             <configuration>
+                                <skip>${skipITs}</skip>
                                 <destFile>${basedir}/target/jacocoIT.exec</destFile>
                                 <propertyName>jacoco-IT-argline</propertyName>
                             </configuration>
@@ -161,6 +194,59 @@
                             </plugin>
                         </reportPlugins>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>2.10</version>
+                    <configuration>
+                        <useDefaultExcludes>true</useDefaultExcludes>
+                        <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                        <properties>
+                            <owner>${project.organization.name}</owner>
+                            <email>${project.organization.url}</email>
+                            <failOnMissingHeader>true</failOnMissingHeader>
+                        </properties>
+                        <includes>
+                            <include>**/src/**</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/.*/**</exclude>
+                            <exclude>**/_themes/stratio/**</exclude>
+                            <exclude>**/*.rst</exclude>
+                            <exclude>**/*.feature</exclude>
+                            <exclude>**/README*</exclude>
+                            <exclude>**/node*/**</exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>3.2.1</version>
+                    <configuration>
+                        <checkMultipleScalaVersions>false</checkMultipleScalaVersions>
+                        <recompileMode>incremental</recompileMode>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>add-source</goal>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                                <goal>doc</goal>
+                                <goal>doc-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
