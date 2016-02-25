@@ -78,6 +78,19 @@
         </dependencies>
     </dependencyManagement>
 
+    <developers>
+        <developer>
+            <id>jdelgado</id>
+            <name>Javier Delgado</name>
+            <email>jdelgado@stratio.com</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+    
     <build>
         <pluginManagement>
             <plugins>
