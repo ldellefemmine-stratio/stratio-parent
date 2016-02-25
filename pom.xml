@@ -72,7 +72,6 @@
         </dependency>
     </dependencies>
 
->>>>>>> 0d8e061... fixing sonatype checks - scm
     <dependencyManagement>
         <dependencies>
             <dependency>
