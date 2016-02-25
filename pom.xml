@@ -21,7 +21,7 @@
 
     <groupId>com.stratio</groupId>
     <artifactId>parent</artifactId>
-    <version>0.6.2</version>
+    <version>0.6.3-RC1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>The Stratio pom</description>
     <name>stratio-parent-pom</name>
