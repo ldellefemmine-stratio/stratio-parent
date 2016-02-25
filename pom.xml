@@ -55,6 +55,24 @@
         </license>
     </licenses>
 
+    <scm>
+        <url>https://github.com/Stratio/</url>
+        <connection>scm:git:git@github.com:Stratio/stratio-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:Stratio/stratio-parent.git
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.sonarsource.java</groupId>
+            <artifactId>sonar-jacoco-listeners</artifactId>
+            <version>3.7.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+>>>>>>> 0d8e061... fixing sonatype checks - scm
     <dependencyManagement>
         <dependencies>
             <dependency>

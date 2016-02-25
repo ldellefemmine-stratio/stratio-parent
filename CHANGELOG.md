@@ -2,6 +2,10 @@
 
 ## 0.7.0 (Upcoming)
 
+## 0.6.2 (February 2016)
+
+* Readding scm tag as sonatype checks its existance
+
 ## 0.6.1 (February 2016)
 
 * Readding developers tag as sonatype checks its existance
