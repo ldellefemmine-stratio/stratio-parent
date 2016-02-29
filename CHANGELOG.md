@@ -2,6 +2,8 @@
 
 ## 0.7.0 (Upcoming)
 
+* Added webdav extension for publishing to confluence
+
 ## 0.6.2 (February 2016)
 
 * Readding scm tag as sonatype checks its existance
