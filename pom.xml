@@ -109,14 +109,6 @@
     </developers>
     
     <build>
-	    <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>2.10</version>
-            </extension>
-        </extensions>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -125,6 +117,9 @@
                     <version>0.7.5.201505241946</version>
                     <configuration>
                         <dataFile>${jacoco.dataFile}</dataFile>
+                        <includes>                    
+                            <include>com/stratio/**</include>
+                        </includes>
                     </configuration>
                     <executions>
                         <execution>

@@ -2,7 +2,7 @@
 
 ## 0.7.0 (Upcoming)
 
-* Added webdav extension for publishing to confluence
+* Filter jacoco classes to dump
 
 ## 0.6.2 (February 2016)
 
