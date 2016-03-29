@@ -3,7 +3,7 @@
 ## 0.7.0 (Upcoming)
 
 * Filter jacoco classes to dump
-* Added ftp wagon
+* Added ssh wagon
 
 ## 0.6.2 (February 2016)
 
