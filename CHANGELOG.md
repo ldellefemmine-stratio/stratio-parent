@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.8.0 (upcoming)
+
 ## 0.7.0 (April 2016)
 
 * Filter jacoco classes to dump
