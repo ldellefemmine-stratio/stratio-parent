@@ -241,6 +241,7 @@
                     </configuration>
                     <executions>
                         <execution>
+                            <id>default</id>
                             <goals>
                                 <goal>add-source</goal>
                                 <goal>compile</goal>
