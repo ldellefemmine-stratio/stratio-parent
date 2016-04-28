@@ -132,6 +132,15 @@
                         <includes>                    
                             <include>com/stratio/**</include>
                         </includes>
+                        <fileSets>
+                            <fileSet implementation="org.apache.maven.shared.model.fileset.FileSet">
+                                <directory>${project.basedir}</directory>
+                                <includes>
+                                    <include>**/target/*.exec</include>
+                                </includes>
+                            </fileSet>
+                        </fileSets>
+                        <destFile>${project.build.directory}/jacoco.exec</destFile>
                     </configuration>
                     <executions>
                         <execution>
