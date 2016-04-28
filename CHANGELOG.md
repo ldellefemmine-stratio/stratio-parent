@@ -2,6 +2,10 @@
 
 ## 0.8.0 (upcoming)
 
+## 0.7.1 (May 2016)
+
+* Changed license header style for scala & java
+
 ## 0.7.0 (April 2016)
 
 * Filter jacoco classes to dump
