@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2 (May 2016)
+
+* Dump sonarquebe listeners due https://jira.sonarsource.com/browse/SONARJAVA-728
+
 ## 0.7.1 (May 2016)
 
 * Changed license header style for scala & java

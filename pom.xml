@@ -83,13 +83,7 @@
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.sonarsource.java</groupId>
-                <artifactId>sonar-jacoco-listeners</artifactId>
-                <version>3.7.1</version>
-                <scope>test</scope>
-            </dependency>
+            </dependency>            
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
@@ -167,13 +161,7 @@
                         <argLine>
                             ${jacoco-IT-argline}
                         </argLine>
-                        <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>
-                        <properties>
-                            <property>
-                                <name>listener</name>
-                                <value>org.sonar.java.jacoco.JUnitListener</value>
-                            </property>
-                        </properties>
+                        <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>                        
                     </configuration>
                     <executions>
                         <execution>
@@ -192,13 +180,7 @@
                         <skipTests>${skipUTs}</skipTests>
                         <argLine>
                             ${jacoco-UT-argline}
-                        </argLine>
-                        <properties>
-                            <property>
-                                <name>listener</name>
-                                <value>org.sonar.java.jacoco.JUnitListener</value>
-                            </property>
-                        </properties>
+                        </argLine>                        
                     </configuration>
                 </plugin>
                 <plugin>
