@@ -61,11 +61,7 @@
         <developerConnection>scm:git:git@github.com:Stratio/stratio-parent.git
         </developerConnection>
         <tag>HEAD</tag>
-    </scm>
-    
-    <properties>
-        <confluence.version></confluence.version>
-    </properties>
+    </scm>    
 
     <dependencies>
         <dependency>
@@ -270,7 +266,7 @@
                     </configuration>
                 </plugin>            
                 <plugin>
-                <groupId>org.codehaus.mojo</groupId>
+                    <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>1.10</version>
                     <executions>
@@ -289,6 +285,18 @@
                               <name>confluence.version</name>
                               <value>${parsedVersion.majorVersion}x${parsedVersion.minorVersion}</value>
                               <regex>.</regex>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>parse-scala-version</id>
+                            <goals>
+                                <goal>regex-property</goal>
+                            </goals>
+                            <configuration>
+                                <name>scala.binary.package.version</name>
+                                <value>${scala.binary.version}</value>
+                                <regex>(.*)[\._](.*)</regex>
+                                <replacement>$1$2</replacement>                                
                             </configuration>
                         </execution>
                     </executions>
