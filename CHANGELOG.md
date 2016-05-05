@@ -3,6 +3,7 @@
 ## 0.7.2 (May 2016)
 
 * Dump sonarquebe listeners due https://jira.sonarsource.com/browse/SONARJAVA-728
+* Included build-helper-maven-plugin parse-scala-version (so crossbuilts debs get proper names)
 
 ## 0.7.1 (May 2016)
 
