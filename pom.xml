@@ -79,7 +79,7 @@
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
                 <scope>test</scope>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
@@ -103,7 +103,7 @@
     </developers>
     
     <build>
-        <extensions>            
+        <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh</artifactId>
@@ -157,7 +157,7 @@
                         <argLine>
                             ${jacoco-IT-argline}
                         </argLine>
-                        <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>                        
+                        <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>
                     </configuration>
                     <executions>
                         <execution>
@@ -176,7 +176,7 @@
                         <skipTests>${skipUTs}</skipTests>
                         <argLine>
                             ${jacoco-UT-argline}
-                        </argLine>                        
+                        </argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -241,7 +241,7 @@
                     <configuration>
                         <useIncrementalCompilation>false</useIncrementalCompilation>
                     </configuration>
-                </plugin>            
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
@@ -261,7 +261,8 @@
                             <configuration>
                               <name>confluence.version</name>
                               <value>${parsedVersion.majorVersion}x${parsedVersion.minorVersion}</value>
-                              <regex>.</regex>
+                              <regex>(.*)</regex>
+                              <replacement>$1</replacement>  
                             </configuration>
                         </execution>
                         <execution>
@@ -279,8 +280,9 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
-    </build>
+        </pluginManagement>    
+    </build>    
+
     <profiles>
         <profile>
             <id>sonatype</id>
