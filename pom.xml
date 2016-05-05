@@ -81,12 +81,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>org.sonarsource.java</groupId>
-                <artifactId>sonar-jacoco-listeners</artifactId>
-                <version>3.7.1</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>6.9.9</version>
@@ -109,7 +103,7 @@
     </developers>
     
     <build>
-        <extensions>            
+        <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh</artifactId>
@@ -173,12 +167,6 @@
                             ${jacoco-IT-argline}
                         </argLine>
                         <reportsDirectory>${project.build.directory}/failsafe-reports</reportsDirectory>
-                        <properties>
-                            <property>
-                                <name>listener</name>
-                                <value>org.sonar.java.jacoco.JUnitListener</value>
-                            </property>
-                        </properties>
                     </configuration>
                     <executions>
                         <execution>
@@ -198,12 +186,6 @@
                         <argLine>
                             ${jacoco-UT-argline}
                         </argLine>
-                        <properties>
-                            <property>
-                                <name>listener</name>
-                                <value>org.sonar.java.jacoco.JUnitListener</value>
-                            </property>
-                        </properties>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -264,7 +246,7 @@
                     <configuration>
                         <useIncrementalCompilation>false</useIncrementalCompilation>
                     </configuration>
-                </plugin>            
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
@@ -284,7 +266,8 @@
                             <configuration>
                               <name>confluence.version</name>
                               <value>${parsedVersion.majorVersion}x${parsedVersion.minorVersion}</value>
-                              <regex>.</regex>
+                              <regex>(.*)</regex>
+                              <replacement>$1</replacement>  
                             </configuration>
                         </execution>
                         <execution>
@@ -302,8 +285,9 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
-    </build>
+        </pluginManagement>    
+    </build>    
+
     <profiles>
         <profile>
             <id>sonatype</id>
