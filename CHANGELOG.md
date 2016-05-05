@@ -4,6 +4,7 @@
 
 * Dump sonarquebe listeners due https://jira.sonarsource.com/browse/SONARJAVA-728
 * Included build-helper-maven-plugin parse-scala-version (so crossbuilts debs get proper names)
+* Fixed confluence.version parsing
 
 ## 0.7.1 (May 2016)
 
