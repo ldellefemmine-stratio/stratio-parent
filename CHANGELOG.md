@@ -2,9 +2,11 @@
 
 ## 0.8.0 (upcoming)
 
+* Added configuration for easing multiple JaCoCo reports merging
+
 ## 0.7.2 (May 2016)
 
-* Dump sonarquebe listeners due https://jira.sonarsource.com/browse/SONARJAVA-728
+* Dump sonarqube listeners due https://jira.sonarsource.com/browse/SONARJAVA-728
 * Included build-helper-maven-plugin parse-scala-version (so crossbuilts debs get proper names)
 * Fixed confluence.version parsing
 
