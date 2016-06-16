@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.8.0 (upcoming)
+## 0.8.0 (16 June 2016)
 
 * Added configuration for easing multiple JaCoCo reports merging
 
