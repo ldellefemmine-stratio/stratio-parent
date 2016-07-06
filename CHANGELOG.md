@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.8.1 (upcoming)
+## 0.8.1 (July 06, 2016)
 
 * Included coverage exclusion for HelpMojos (so that coveralls plugin succeedes)
 
