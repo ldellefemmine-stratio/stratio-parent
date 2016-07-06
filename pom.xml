@@ -92,7 +92,7 @@
             </roles>
         </developer>
     </developers>
-    
+
     <build>
         <extensions>
             <extension>
@@ -101,7 +101,7 @@
                 <version>2.10</version>
             </extension>
         </extensions>
-        
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -110,9 +110,12 @@
                     <version>0.7.5.201505241946</version>
                     <configuration>
                         <dataFile>${jacoco.dataFile}</dataFile>
-                        <includes>                    
+                        <includes>
                             <include>com/stratio/**</include>
                         </includes>
+                        <excludes>
+                            <exclude>**/HelpMojo.*</exclude>
+                        </excludes>
                         <fileSets>
                             <fileSet implementation="org.apache.maven.shared.model.fileset.FileSet">
                                 <directory>${project.basedir}</directory>
@@ -270,13 +273,13 @@
                                 <name>scala.binary.package.version</name>
                                 <value>${scala.binary.version}</value>
                                 <regex>(.*)[\._](.*)</regex>
-                                <replacement>$1$2</replacement>                                
+                                <replacement>$1$2</replacement>
                             </configuration>
                         </execution>
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>    
+        </pluginManagement>
     </build>    
 
     <profiles>

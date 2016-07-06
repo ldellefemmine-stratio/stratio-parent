@@ -1,6 +1,12 @@
 # Changelog
 
-## 0.8.0 (upcoming)
+## 0.9.0 (upcoming)
+
+## 0.8.1 (upcoming)
+
+* Included coverage exclusion for HelpMojos (so that coveralls plugin succeedes)
+
+## 0.8.0 (16 June 2016)
 
 * Added configuration for easing multiple JaCoCo reports merging
 
