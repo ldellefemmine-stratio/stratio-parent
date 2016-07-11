@@ -4,7 +4,7 @@
 
 * Readded SLASHSTAR_STYLE license setting
 
-## 0.8.2 (upcoming)
+## 0.8.2 (July 11, 2016)
 
 * Readded SLASHSTAR_STYLE license setting
 
