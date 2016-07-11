@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2 (upcoming)
+
+* Readded SLASHSTAR_STYLE license setting
+
 ## 0.8.1 (July 06, 2016)
 
 * Included coverage exclusion for HelpMojos (so that coveralls plugin succeedes)
