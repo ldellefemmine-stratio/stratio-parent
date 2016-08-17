@@ -132,7 +132,7 @@
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
-                            <phase>generate-test-resources</phase>
+                            <phase>process-test-classes</phase>
                             <configuration>
                                 <skip>${skipUTs}</skip>
                                 <destFile>${basedir}/target/jacocoUT.exec</destFile>
@@ -142,9 +142,8 @@
                         <execution>
                             <id>integration-test-coverage</id>
                             <goals>
-                                <goal>prepare-agent</goal>
+                                <goal>prepare-agent-integration</goal>
                             </goals>
-                            <phase>pre-integration-test</phase>
                             <configuration>
                                 <skip>${skipITs}</skip>
                                 <destFile>${basedir}/target/jacocoIT.exec</destFile>
