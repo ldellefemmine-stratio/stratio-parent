@@ -311,7 +311,7 @@
         </profile>
 
         <profile>
-            <id>OOSRH</id>
+            <id>OSSRH</id>
             <build>
                 <plugins>
                      <plugin>
