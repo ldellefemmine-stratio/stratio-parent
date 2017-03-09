@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.9.0 (upcoming)
+## 0.9.0 (March 09, 2017)
 
 * Readded SLASHSTAR_STYLE license setting
 * Included maven-enforcer-plugin for OSSRH compliance check
