@@ -8,6 +8,7 @@ hose {
     REPOSITORY = 'stratio-parent'
     
     DEV = { config ->        
+            doPackage(config)
             doDeploy(config)
     }
 }
