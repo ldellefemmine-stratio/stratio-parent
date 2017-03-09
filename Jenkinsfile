@@ -6,6 +6,7 @@ hose {
     DEVTIMEOUT = 20
     RELEASETIMEOUT = 20
     REPOSITORY = 'stratio-parent'
+    FOSS = true
     
     DEV = { config ->        
             doPackage(config)
