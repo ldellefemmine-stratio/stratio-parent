@@ -31,12 +31,12 @@
         <repository>
             <id>releases</id>
             <name>Stratio releases</name>
-            <url>http://sodio.stratio.com/nexus/content/repositories/releases/</url>
+            <url>http://sodio.stratio.com/repository/releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Stratio snapshots</name>
-            <url>http://sodio.stratio.com/nexus/content/repositories/snapshots/</url>
+            <url>http://sodio.stratio.com/repository/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 

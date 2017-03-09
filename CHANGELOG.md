@@ -5,6 +5,7 @@
 * Readded SLASHSTAR_STYLE license setting
 * Included maven-enforcer-plugin for OSSRH compliance check
 * Bumped surefire and failsafe versions
+* Nexus 3 came with new urls
 
 ## 0.8.2 (July 11, 2016)
 
