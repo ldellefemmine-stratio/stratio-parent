@@ -197,6 +197,7 @@
                             <java>SLASHSTAR_STYLE</java>
                             <scala>SLASHSTAR_STYLE</scala>
                             <ts>SLASHSTAR_STYLE</ts>
+                            <scss>JAVADOC_STYLE</scss>
                         </mapping>
                         <useDefaultExcludes>true</useDefaultExcludes>
                         <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
