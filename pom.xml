@@ -284,12 +284,33 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin>                
             </plugins>
         </pluginManagement>
     </build>
 
     <profiles>
+    	<profile>
+        	<id>enforcer</id>
+        	<build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.4.1</version>                        
+                        <configuration>
+                            <rules>
+                                <requireReleaseDeps>
+                                    <message>No Snapshots Allowed!</message>
+                                    <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
+                                </requireReleaseDeps>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>                            
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>sonatype</id>
             <build>
