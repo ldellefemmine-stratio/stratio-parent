@@ -290,23 +290,33 @@
     </build>
 
     <profiles>
-    	<profile>
-        	<id>enforcer</id>
-        	<build>
+        <profile>
+            <id>enforcer</id>
+            <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-enforcer-plugin</artifactId>
-                        <version>1.4.1</version>                        
-                        <configuration>
-                            <rules>
-                                <requireReleaseDeps>
-                                    <message>No Snapshots Allowed!</message>
-                                    <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
-                                </requireReleaseDeps>
-                            </rules>
-                            <fail>true</fail>
-                        </configuration>                            
+                        <version>1.4.1</version>
+                        <executions>
+                            <execution>
+                                <id>enforceDeps</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <phase>compile</phase>
+                                <configuration>
+                                    <rules>
+                                        <requireReleaseDeps>
+                                            <message>No Snapshots Allowed!</message>
+                                            <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
+                                            <searchTransitive>false</searchTransitive>
+                                        </requireReleaseDeps>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
