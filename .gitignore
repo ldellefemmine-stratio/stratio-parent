@@ -1,2 +1,4 @@
 *.log
 maven-metadata.xml
+*.idea
+*.iml
