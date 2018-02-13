@@ -31,12 +31,12 @@
         <repository>
             <id>releases</id>
             <name>Stratio releases</name>
-            <url>http://sodio.stratio.com/repository/releases/</url>
+            <url>http://jenkinspre.labs.stratio.com:8081/repository/releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Stratio snapshots</name>
-            <url>http://sodio.stratio.com/repository/snapshots/</url>
+            <url>http://jenkinspre.labs.stratio.com:8081/repository/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -57,8 +57,8 @@
 
     <scm>
         <url>https://github.com/Stratio/</url>
-        <connection>scm:git:git@github.com:Stratio/stratio-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:Stratio/stratio-parent.git
+        <connection>scm:git:git@github.com:stratiocommit-test/stratio-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:stratiocommit-test/stratio-parent.git
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
@@ -79,19 +79,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <developers>
-        <developer>
-            <id>jdelgado</id>
-            <name>Javier Delgado</name>
-            <email>jdelgado@stratio.com</email>
-            <roles>
-                <role>architect</role>
-                <role>developer</role>
-                <role>maintainer</role>
-            </roles>
-        </developer>
-    </developers>
 
     <build>
         <extensions>
