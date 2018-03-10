@@ -27,6 +27,10 @@
     <name>stratio-parent-pom</name>
     <url>https://github.com/Stratio</url>
 
+    <properties>
+        <dollar>$</dollar>
+    </properties>
+
     <distributionManagement>
         <repository>
             <id>releases</id>
