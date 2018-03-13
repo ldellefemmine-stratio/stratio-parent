@@ -396,7 +396,6 @@
                                 <goals>
                                     <goal>revision</goal>
                                 </goals>
-                                <phase>package</phase>
                             </execution>
                         </executions>
                         <configuration>
