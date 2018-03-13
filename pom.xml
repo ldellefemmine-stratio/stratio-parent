@@ -396,7 +396,14 @@
                                 <goals>
                                     <goal>revision</goal>
                                 </goals>
+                                <phase>package</phase>
                             </execution>
+                            <execution>
+                                <id>get-the-git-infos-during-deploy</id>
+                                <goals>
+                                    <goal>revision</goal>
+                                </goals>
+                                <phase>deploy</phase>
                         </executions>
                         <configuration>
                             <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
