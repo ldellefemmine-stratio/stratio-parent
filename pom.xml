@@ -442,7 +442,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <file>${project.basedir}/target/${artifactId}-${project.version}.${project.packaging}</file>
+                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
                             <version>${project.version}</version>
                             <packaging>${project.packaging}</packaging>
                             <groupId>${project.groupId}</groupId>
@@ -479,7 +479,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <file>${project.basedir}/target/${artifactId}-${project.version}.${project.packaging}</file>
+                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
                             <version>${project.version}</version>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>${project.artifactId}</artifactId>
