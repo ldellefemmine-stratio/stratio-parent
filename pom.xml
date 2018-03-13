@@ -404,6 +404,7 @@
                                     <goal>revision</goal>
                                 </goals>
                                 <phase>deploy</phase>
+                            </execution>
                         </executions>
                         <configuration>
                             <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
