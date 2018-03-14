@@ -27,6 +27,10 @@
     <name>stratio-parent-pom</name>
     <url>https://github.com/Stratio</url>
 
+    <properties>
+        <dollar>$</dollar>
+    </properties>
+
     <distributionManagement>
         <repository>
             <id>releases</id>
@@ -79,20 +83,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <developers>
         <developer>
             <id>jdelgado</id>
             <name>Javier Delgado</name>
-            <email>jdelgado@stratio.com</email>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
-                <role>maintainer</role>
             </roles>
         </developer>
     </developers>
-
     <build>
         <extensions>
             <extension>
@@ -265,10 +265,10 @@
                                 <goal>regex-property</goal>
                             </goals>
                             <configuration>
-                              <name>confluence.version</name>
-                              <value>${parsedVersion.majorVersion}x${parsedVersion.minorVersion}</value>
-                              <regex>(.*)</regex>
-                              <replacement>$1</replacement>
+                                <name>confluence.version</name>
+                                <value>${parsedVersion.majorVersion}x${parsedVersion.minorVersion}</value>
+                                <regex>(.*)</regex>
+                                <replacement>$1</replacement>
                             </configuration>
                         </execution>
                         <execution>
@@ -284,7 +284,7 @@
                             </configuration>
                         </execution>
                     </executions>
-                </plugin>                
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -347,7 +347,7 @@
             <id>OSSRH</id>
             <build>
                 <plugins>
-                     <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-enforcer-plugin</artifactId>
                         <version>1.4.1</version>
@@ -383,10 +383,93 @@
                                             <property>project.scm.connection</property>
                                             <message>scm section should be defined in project (requirement for OSSRH).</message>
                                         </requireProperty>
-                                      </rules>
+                                    </rules>
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>gitcommit</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>pl.project13.maven</groupId>
+                        <artifactId>git-commit-id-plugin</artifactId>
+                        <version>2.2.4</version>
+                        <executions>
+                            <execution>
+                                <id>get-the-git-infos</id>
+                                <goals>
+                                    <goal>revision</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                            <prefix>git</prefix>
+                            <verbose>false</verbose>
+                            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                            <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                            <format>json</format>
+                            <gitDescribe>
+                                <skip>false</skip>
+                                <always>false</always>
+                                <dirty>-dirty</dirty>
+                            </gitDescribe>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>2.8.2</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>none</phase>
+                            </execution>
+                            <execution>
+                                <id>stratio-gitcommit-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy-file</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
+                            <version>${project.version}</version>
+                            <packaging>${project.packaging}</packaging>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <id>default-install</id>
+                                <phase>none</phase>
+                            </execution>
+                            <execution>
+                                <id>stratio-gitcommit-install</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
+                            <version>${project.version}</version>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <packaging>${project.packaging}</packaging>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

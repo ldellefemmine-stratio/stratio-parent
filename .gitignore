@@ -1,2 +1,3 @@
 *.log
 maven-metadata.xml
+.idea/
