@@ -405,6 +405,7 @@
                                 <goals>
                                     <goal>revision</goal>
                                 </goals>
+                                                <phase>validate</phase>
                             </execution>
                         </executions>
                         <configuration>
@@ -412,6 +413,7 @@
                             <prefix>git</prefix>
                             <verbose>false</verbose>
                             <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                                        <injectAllReactorProjects>true</injectAllReactorProjects>
                             <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
                             <format>json</format>
                             <gitDescribe>
@@ -421,55 +423,29 @@
                             </gitDescribe>
                         </configuration>
                     </plugin>
-
                     <plugin>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8.2</version>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                        <version>1.0.0</version>
+                        <configuration>
+                            <updatePomFile>true</updatePomFile>
+                        </configuration>
                         <executions>
                             <execution>
-                                <id>default-deploy</id>
-                                <phase>none</phase>
+                                <id>flatten</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>flatten</goal>
+                                </goals>
                             </execution>
                             <execution>
-                                <id>stratio-gitcommit-deploy</id>
-                                <phase>deploy</phase>
+                                <id>flatten.clean</id>
+                                <phase>clean</phase>
                                 <goals>
-                                    <goal>deploy-file</goal>
+                                    <goal>clean</goal>
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
-                            <version>${project.version}</version>
-                            <packaging>${project.packaging}</packaging>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                        </configuration>
-                    </plugin>
-
-                    <plugin>
-                        <artifactId>maven-install-plugin</artifactId>
-                        <version>2.4</version>
-                        <executions>
-                            <execution>
-                                <id>default-install</id>
-                                <phase>none</phase>
-                            </execution>
-                            <execution>
-                                <id>stratio-gitcommit-install</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>install-file</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <file>${project.basedir}/target/${project.artifactId}-${project.version}.${project.packaging}</file>
-                            <version>${project.version}</version>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <packaging>${project.packaging}</packaging>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
