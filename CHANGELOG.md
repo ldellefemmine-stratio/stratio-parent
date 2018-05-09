@@ -2,7 +2,10 @@
 
 ## 0.10.0 (upcoming)
 
-* Pending changelog
+* [FLOW-767] Included Flatten plugin
+* [PIT-45] Included changes for Gitcommit
+* [QA-398] Included enforcer plugin
+* [QA-348] Included typescript license header format
 
 ## 0.9.0 (March 09, 2017)
 
