@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.10.0 (upcoming)
+## 0.10.0 (May 09, 2018)
 
 * [FLOW-767] Included Flatten plugin
 * [PIT-45] Included changes for Gitcommit
