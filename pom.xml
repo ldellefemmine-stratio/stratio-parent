@@ -443,6 +443,7 @@
 </profile>
     <profile>
 	    <id>resolver</id>
+	    <build>
 	    <plugins>
 		    <plugin>
 			    <groupId>io.paradoxical</groupId>
@@ -493,5 +494,6 @@
 </plugin>
 </plugins>
 </build>
+</profile>
     </profiles>
 </project>
