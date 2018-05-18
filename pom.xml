@@ -413,7 +413,13 @@
                                 <dirty>-dirty</dirty>
                             </gitDescribe>
                         </configuration>
-                    </plugin>
+	        </plugin>
+	</plugins>
+</build>
+</profile>
+<profile>
+	<id>flatten</id>
+		<plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>flatten-maven-plugin</artifactId>
@@ -440,6 +446,27 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+    </profile>
+    <profile>
+	    <id>resolver</id>
+	    <plugins>
+		    <plugin>
+			    <groupId>io.paradoxical</groupId>
+    <artifactId>resolved-pom-maven-plugin</artifactId>
+    <version>1.0</version>
+    <configuration>
+        <properties>
+            <revision>${revision}</revision>
+        </properties>
+    </configuration>
+    <executions>
+        <execution>
+            <id>resolve-my-pom</id>
+            <phase>initialize</phase>
+            <goals>
+                <goal>resolve-pom</goal>
+            </goals>
+        </execution>
+    </executions>
     </profiles>
 </project>
