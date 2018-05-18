@@ -445,26 +445,20 @@
 	    <id>resolver</id>
 	    <build>
 	    <plugins>
-		    <plugin>
-			    <groupId>io.paradoxical</groupId>
-    <artifactId>resolved-pom-maven-plugin</artifactId>
-    <version>1.0</version>
-    <configuration>
-        <properties>
-            <revision>${revision}</revision>
-        </properties>
-    </configuration>
-    <executions>
-        <execution>
-            <id>resolve-my-pom</id>
-            <phase>initialize</phase>
-            <goals>
-                <goal>resolve-pom</goal>
-            </goals>
-        </execution>
-    </executions>
-  </plugin>
-  <plugin>
+        <plugin>
+          <groupId>com.sap.prd.mobile.ios.maven.plugins</groupId>
+          <artifactId>resolve-pom-maven-plugin</artifactId>
+          <version>1.0</version>
+          <executions>
+            <execution>
+              <id>resolve-pom-props</id>
+              <goals>
+                <goal>resolve-pom-props</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
       <groupId>pl.project13.maven</groupId>
       <artifactId>git-commit-id-plugin</artifactId>
       <version>2.2.4</version>
