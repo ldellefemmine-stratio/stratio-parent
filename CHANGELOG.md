@@ -2,7 +2,7 @@
 
 ## 0.11.0 (upcoming)
 
-* Pending changelog
+* [FLOW-806] Remove Flatten plugin in gitcommit profile
 
 ## 0.10.0 (May 09, 2018)
 
