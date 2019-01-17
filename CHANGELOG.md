@@ -2,7 +2,7 @@
 
 ## 0.12.0 (upcoming)
 
-* Pending changelog
+* [FLOW-914] Add scoverage plugin
 
 ## 0.11.0 (May 24, 2018)
 

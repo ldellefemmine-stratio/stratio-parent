@@ -285,6 +285,11 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.scoverage</groupId>
+                    <artifactId>scoverage-maven-plugin</artifactId>
+                    <version>1.3.0</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
